@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1008641957375",
+    "project_id": "liveasy-26151",
+    "storage_bucket": "liveasy-26151.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008641957375:android:91c4361aeb63a4c1ba1bca",
+        "android_client_info": {
+          "package_name": "com.example.liveasy_test_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008641957375-ogro4dfff1h7nttfgej3hdlkasd83uch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-mm1WXPsDvgdx2x3IycqGmphx1-YhdBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008641957375-ogro4dfff1h7nttfgej3hdlkasd83uch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/add_phone_number_screen.dart';
 
 class SelectLanguageScreen extends StatefulWidget {
   const SelectLanguageScreen({Key? key}) : super(key: key);
@@ -96,7 +97,10 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               height: 50,
               child: RaisedButton(
                 color: Colors.indigo.shade800,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(AddPhoneNumberScreen.routeName);
+                },
                 child: const Text(
                   'NEXT',
                   style: TextStyle(

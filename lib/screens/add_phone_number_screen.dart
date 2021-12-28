@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/otp_screen.dart';
 
 class AddPhoneNumberScreen extends StatelessWidget {
   static const routeName = '/add-phone';
@@ -103,7 +104,21 @@ class AddPhoneNumberScreen extends StatelessWidget {
                 height: 50,
                 child: RaisedButton(
                   color: Colors.indigo.shade800,
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_mobilePhoneController.text.trim().isEmpty) {
+                      // dont submit
+                    } else if (_mobilePhoneController.text.trim().length < 10) {
+                      // show message
+                    } else if (_mobilePhoneController.text.trim().length > 10) {
+                    } else {
+                      Navigator.of(context).pushNamed(
+                        OTPScreen.routeName,
+                        arguments: {
+                          'phone_number': _mobilePhoneController.text,
+                        },
+                      );
+                    }
+                  },
                   child: const Text(
                     'CONTINUE',
                     style: TextStyle(

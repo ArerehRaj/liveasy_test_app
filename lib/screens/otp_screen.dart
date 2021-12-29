@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:liveasy_test_app/screens/radio_button_form_screen.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -154,8 +155,8 @@ class _OTPScreenState extends State<OTPScreen> {
               child: RaisedButton(
                 color: Colors.indigo.shade800,
                 onPressed: () {
-                  // Navigator.of(context)
-                  //     .pushNamed(AddPhoneNumberScreen.routeName);
+                  Navigator.of(context)
+                      .pushNamed(RadioButtonFormScreen.routeName);
                 },
                 child: const Text(
                   'VERIFY AND CONTINUE',

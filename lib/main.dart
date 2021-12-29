@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import './screens/radio_button_form_screen.dart';
 import './screens/otp_screen.dart';
 import './screens/add_phone_number_screen.dart';
 import './screens/select_language_screen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
       routes: {
         AddPhoneNumberScreen.routeName: (ctx) => AddPhoneNumberScreen(),
         OTPScreen.routeName: (ctx) => const OTPScreen(),
+        RadioButtonFormScreen.routeName: (ctx) => const RadioButtonFormScreen(),
       },
     );
   }

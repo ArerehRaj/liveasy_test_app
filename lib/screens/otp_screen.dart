@@ -78,10 +78,9 @@ class _OTPScreenState extends State<OTPScreen> {
     _verifyPhoneNumber(phoneNumber);
 
     final BoxDecoration pinPutDecoration = BoxDecoration(
-      color: const Color.fromRGBO(43, 46, 66, 1),
-      borderRadius: BorderRadius.circular(10.0),
+      color: Colors.blue.shade200,
       border: Border.all(
-        color: const Color.fromRGBO(126, 203, 224, 1),
+        color: Colors.blue.shade200,
       ),
     );
 
@@ -89,12 +88,16 @@ class _OTPScreenState extends State<OTPScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
       ),
       body: Container(
         height: deviceSize.height,
         width: deviceSize.width,
         alignment: Alignment.center,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               'Verify Phone',
@@ -130,7 +133,39 @@ class _OTPScreenState extends State<OTPScreen> {
                 followingFieldDecoration: pinPutDecoration,
                 pinAnimationType: PinAnimationType.fade,
               ),
-            )
+            ),
+            SizedBox(
+              height: deviceSize.height * 0.025,
+            ),
+            const Text(
+              'Didn\'t recieve the code? Request Again.',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 18,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: deviceSize.height * 0.025,
+            ),
+            Container(
+              width: deviceSize.width * 0.7,
+              height: 50,
+              child: RaisedButton(
+                color: Colors.indigo.shade800,
+                onPressed: () {
+                  // Navigator.of(context)
+                  //     .pushNamed(AddPhoneNumberScreen.routeName);
+                },
+                child: const Text(
+                  'VERIFY AND CONTINUE',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

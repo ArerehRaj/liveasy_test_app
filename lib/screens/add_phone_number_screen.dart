@@ -7,6 +7,15 @@ class AddPhoneNumberScreen extends StatelessWidget {
 
   final _mobilePhoneController = TextEditingController();
 
+  void _showErrorMessage(String message, BuildContext ctx) {
+    ScaffoldMessenger.of(ctx).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -106,10 +115,16 @@ class AddPhoneNumberScreen extends StatelessWidget {
                   color: Colors.indigo.shade800,
                   onPressed: () {
                     if (_mobilePhoneController.text.trim().isEmpty) {
-                      // dont submit
-                    } else if (_mobilePhoneController.text.trim().length < 10) {
-                      // show message
-                    } else if (_mobilePhoneController.text.trim().length > 10) {
+                      _showErrorMessage(
+                        'Please enter a phone number.',
+                        context,
+                      );
+                    } else if (_mobilePhoneController.text.trim().length < 10 ||
+                        _mobilePhoneController.text.trim().length > 10) {
+                      _showErrorMessage(
+                        'Please enter a valid phone number.',
+                        context,
+                      );
                     } else {
                       Navigator.of(context).pushNamed(
                         OTPScreen.routeName,

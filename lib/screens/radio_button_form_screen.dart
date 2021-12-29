@@ -11,7 +11,7 @@ class RadioButtonFormScreen extends StatefulWidget {
 class _RadioButtonFormScreenState extends State<RadioButtonFormScreen> {
   String _value = '';
 
-  Widget _getCardOption(String title, Icon optionIcon) {
+  Widget _getCardOption(String title, Icon optionIcon, double deviceWidth) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -40,13 +40,15 @@ class _RadioButtonFormScreenState extends State<RadioButtonFormScreen> {
             ],
           ),
           subtitle: Row(
-            children: const [
+            children: [
               SizedBox(
-                width: 70,
+                // width: 70,
+                width: deviceWidth * 0.025,
               ),
               SizedBox(
-                width: 200,
-                child: Text(
+                // width: 200,
+                width: deviceWidth * 0.6,
+                child: const Text(
                   'Lorem Ipsum is simply dummy text of the printing industry.',
                 ),
               ),
@@ -84,6 +86,7 @@ class _RadioButtonFormScreenState extends State<RadioButtonFormScreen> {
                 Icons.store,
                 size: 50,
               ),
+              deviceSize.width,
             ),
             _getCardOption(
               'Transporter',
@@ -91,6 +94,7 @@ class _RadioButtonFormScreenState extends State<RadioButtonFormScreen> {
                 Icons.drive_eta_outlined,
                 size: 50,
               ),
+              deviceSize.width,
             ),
           ],
         ),

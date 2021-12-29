@@ -118,21 +118,25 @@ class _OTPScreenState extends State<OTPScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: PinPut(
-                fieldsCount: 6,
-                withCursor: true,
-                textStyle: const TextStyle(fontSize: 25.0, color: Colors.white),
-                eachFieldWidth: 55.0,
-                eachFieldHeight: 55.0,
-                onSubmit: (String pin) => _showSnackBar(pin),
-                focusNode: _pinPutFocusNode,
-                controller: _pinPutController,
-                submittedFieldDecoration: pinPutDecoration,
-                selectedFieldDecoration: pinPutDecoration,
-                followingFieldDecoration: pinPutDecoration,
-                pinAnimationType: PinAnimationType.fade,
+            SizedBox(
+              width: deviceSize.width,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: PinPut(
+                  fieldsCount: 6,
+                  withCursor: true,
+                  textStyle:
+                      const TextStyle(fontSize: 25.0, color: Colors.white),
+                  eachFieldWidth: 55.0,
+                  eachFieldHeight: 55.0,
+                  onSubmit: (String pin) => _showSnackBar(pin),
+                  focusNode: _pinPutFocusNode,
+                  controller: _pinPutController,
+                  submittedFieldDecoration: pinPutDecoration,
+                  selectedFieldDecoration: pinPutDecoration,
+                  followingFieldDecoration: pinPutDecoration,
+                  pinAnimationType: PinAnimationType.fade,
+                ),
               ),
             ),
             SizedBox(
